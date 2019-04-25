@@ -247,6 +247,8 @@ public class LoginActivity extends Activity {
     private void setErrorText(String _error) {
         mTv_error.setVisibility(View.VISIBLE);
         mTv_error.setText(_error);
+
+
     }
 
     private FirebaseUser getCurrentUser() {
