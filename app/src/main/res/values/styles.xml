@@ -8,6 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="titleFonStyle" parent="generalBoldStyle">
+        <item name="android:background">@drawable/gradient_progress_title</item>
+    </style>
+    <style name="titleFonStyleRed" parent="generalBoldStyle">
+        <item name="android:background">@drawable/gradient_progress_title_red</item>
+    </style>
+    <style name="generalBoldStyle" parent="AppTheme">
+        <item name="android:fontFamily">@font/walkway_ob</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="contentFonStyle" parent="AppTheme">
+        <item name="android:fontFamily">@font/amatic_regular</item>
+
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

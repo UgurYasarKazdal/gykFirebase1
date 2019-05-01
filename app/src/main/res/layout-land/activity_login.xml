@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
+
+    <EditText
+        android:id="@+id/edt_login_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="User Name"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" />
+
+    <EditText
+        android:id="@+id/edt_login_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/edt_login_userName"
+        app:layout_constraintStart_toStartOf="@+id/edt_login_userName"
+        app:layout_constraintTop_toBottomOf="@+id/edt_login_userName" />
+
+    <Button
+        android:id="@+id/btn_login_signIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/green_500"
+        android:text="Sign In"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/edt_login_userName"
+        app:layout_constraintStart_toStartOf="@+id/edt_login_userName"
+        app:layout_constraintTop_toBottomOf="@+id/edt_login_password" />
+
+    <Button
+        android:id="@+id/btn_login_signUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/blue_400"
+        android:text="Sign Up"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/edt_login_userName"
+        app:layout_constraintStart_toStartOf="@+id/edt_login_userName"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_signIn" />
+
+    <TextView
+        android:id="@+id/tv_login_error"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:inputType="textMultiLine"
+        android:padding="2dp"
+        android:text="error"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/edt_login_userName"
+        app:layout_constraintStart_toStartOf="@+id/edt_login_userName" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_login_signUp"
+        app:layout_constraintStart_toStartOf="@+id/edt_login_userName"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_signUp" />
+
+    <Button
+        android:id="@+id/btn_login_googleSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Log-out All"
+        app:layout_constraintEnd_toEndOf="@+id/edt_login_userName"
+        app:layout_constraintStart_toStartOf="@+id/edt_login_userName"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+</android.support.constraint.ConstraintLayout>

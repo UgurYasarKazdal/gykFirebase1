@@ -25,7 +25,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import static android.content.ContentValues.TAG;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends BaseActivity {
     private static final int RC_SIGN_IN = 1;
     private EditText mEdt_userName;
     private EditText mEdt_password;
@@ -83,7 +83,8 @@ public class LoginActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (checkLogin()) {
-                    signIn();
+                    showDialog("Giriş Yapılıyor","GezginApp");
+                  //  signIn();
                 } else {
                     mTv_error.setVisibility(View.VISIBLE);
                     mTv_error.setText(mError);
@@ -221,6 +222,7 @@ public class LoginActivity extends Activity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             // updateUI(user);
+                            dismissDiloag();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());

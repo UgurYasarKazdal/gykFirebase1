@@ -44,5 +44,13 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        view.findViewById(R.id.img_changePhoto).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivityForResult(new Intent(getContext(),AddPhotoActivity.class),3);
+            }
+        });
+
     }
+
 }

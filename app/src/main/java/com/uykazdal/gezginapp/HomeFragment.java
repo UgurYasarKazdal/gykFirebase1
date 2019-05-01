@@ -60,7 +60,7 @@ public class HomeFragment extends Fragment {
             }
 
 
-            recyclerView.setAdapter(new HomeFragmentAdapter(cityModels));
+            recyclerView.setAdapter(new CityAdapter(cityModels));
         }
         return view;
     }

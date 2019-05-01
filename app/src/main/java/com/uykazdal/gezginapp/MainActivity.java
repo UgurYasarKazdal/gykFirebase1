@@ -1,5 +1,6 @@
 package com.uykazdal.gezginapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -25,11 +26,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 
-public class MainActivity extends AppCompatActivity
+import jp.wasabeef.picasso.transformations.CropCircleTransformation;
+
+public class MainActivity extends BaseAppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseUser mUser;
     FrameLayout frameLayout;
+    private final int REQUEST_ADD_NOTE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +41,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        //TODO:SSS
         mUser = FirebaseAuth.getInstance().getCurrentUser();
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity
         ImageView imageView = navigationView.getHeaderView(0).findViewById(R.id.img_header_user);
 
         Picasso.get()
-                .load("https://firebasestorage.googleapis.com/v0/b/gezginapp-82da1.appspot.com/o/turkcell_logo.png?alt=media&token=dbca3f37-78c2-4554-9abe-690e43a7789b")
+                .load("https://justfindus.in/uploads/profile_photos/nophoto-female.jpg")
+                .transform(new CropCircleTransformation())
                 .into(imageView);
 
         frameLayout = findViewById(R.id.frame_appBar_container);
@@ -119,6 +123,9 @@ public class MainActivity extends AppCompatActivity
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frame_appBar_container, new ProfileFragment());
             fragmentTransaction.commit();
+        } else if (id == R.id.nav_addNote) {
+            startActivityForResult(new Intent(this, AddNoteActivity.class), REQUEST_ADD_NOTE);
+
         } else if (id == R.id.nav_exit) {
             FirebaseAuth.getInstance().signOut();
 
